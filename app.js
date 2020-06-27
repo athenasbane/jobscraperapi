@@ -21,7 +21,7 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err))
 
-const deleteDB = schedule.scheduleJob('30 * * * * *', () => {
+const deleteDB = schedule.scheduleJob('* 0 5 * * *', () => {
 
 
     Job.deleteMany({ applied: false, dismissed: true }, (err) => {
@@ -31,7 +31,7 @@ const deleteDB = schedule.scheduleJob('30 * * * * *', () => {
     })
 })
 
-const scraperSchedule = schedule.scheduleJob('* * 6 * * *', () => {
+const scraperSchedule = schedule.scheduleJob('30 * * * * *', () => {
 
     scraper('recruiter')
     scraper('recruitment')
