@@ -31,7 +31,7 @@ const deleteDB = schedule.scheduleJob('* 0 5 * * *', () => {
     })
 })
 
-const scraperSchedule = schedule.scheduleJob('30 * * * * *', () => {
+const scraperSchedule = schedule.scheduleJob('* 0 7 * * *', () => {
 
     scraper('recruiter')
     scraper('recruitment')
