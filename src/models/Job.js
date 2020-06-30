@@ -37,8 +37,15 @@ const UserSchema = new mongooose.Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    owner: {
+        type: mongooose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'User'
     }
 
+}, {
+    timestamps: true
 })
 
 const Job = mongooose.model('Job', UserSchema)
