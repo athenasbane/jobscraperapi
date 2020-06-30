@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const schedule = require('node-schedule')
 
-const db = require('./config/keys').MongoURI || process.env.MongoURI
+const db = process.env.MongoURI
 const Job = require('./src/models/Job')
 const User = require('./src/models/User')
 const auth = require('./src/middleware/auth')
